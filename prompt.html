@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">Clicked</button>
+    <button id="confirm">Confirm</button>
+
+    <script>
+
+        document.getElementById('btn').addEventListener('click', () => {
+            const number = prompt('please input a number')
+            const parseNumber = parseInt(number)
+            const sum = parseNumber + 200;
+            alert(sum)
+        })
+
+        document.getElementById('confirm').addEventListener('click', () => {
+            const href = confirm('are you see website href')
+            if (href === true) {
+                console.log('www.google.com')
+            }
+            else {
+                console.log('not found')
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

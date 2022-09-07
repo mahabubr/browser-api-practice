@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="name-field" type="text">
+    <button id="send-name">Send Name</button>
+    <button id="delete-name">Delete Name</button>
+    <br>
+    <br>
+    <input id="email-field" type="email">
+    <button id="send-email">Send Email</button>
+    <button id="delete-email">Delete Email</button>
+    <br>
+    <br>
+    <textarea name="" id="message-field" cols="20" rows="2"></textarea>
+    <button id="send-message">Send Message</button>
+    <button id="delete-msg">Delete Message</button>
+    <br>
+    <br>
+    <button id="reset">Reset</button>
+
+
+    <script>
+        const commonField = (id) => {
+            const input = document.getElementById(id)
+            const inputValue = input.value;
+            return inputValue
+        }
+
+        document.getElementById('send-name').addEventListener('click', () => {
+            const nameField = commonField('name-field')
+            localStorage.setItem('NAME', nameField)
+        })
+        document.getElementById('send-email').addEventListener('click', () => {
+            const emailField = commonField('email-field')
+            localStorage.setItem('EMAIL', emailField)
+        })
+        document.getElementById('send-message').addEventListener('click', () => {
+            const messageField = commonField('message-field')
+            localStorage.setItem('Message', messageField)
+        })
+        
+        document.getElementById('delete-name').addEventListener('click', () => {
+            localStorage.removeItem('NAME')
+        })
+        document.getElementById('delete-email').addEventListener('click', () => {
+            localStorage.removeItem('EMAIL')
+        })
+        document.getElementById('delete-msg').addEventListener('click', () => {
+            localStorage.removeItem('Message')
+        })
+        
+        document.getElementById('reset').addEventListener('click', () => {
+            localStorage.clear()
+        })
+
+    </script>
+</body>
+
+</html>

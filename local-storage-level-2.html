@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">Incarese</button>
+    <h1 id="p">0</h1>
+    <p id="num"></p>
+
+    <script>
+
+        let num = 1
+        document.getElementById('btn').addEventListener('click', () => {
+            const p = document.getElementById('p')
+            p.innerText = num++
+            
+            localStorage.setItem('number', p.innerText)
+            
+        })
+        const number = document.getElementById('num')
+        const get = localStorage.getItem('number')
+        number.innerText = get
+
+
+    </script>
+</body>
+
+</html>
